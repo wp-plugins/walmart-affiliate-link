@@ -42,6 +42,9 @@ Walmart Affiliate Link lets you easily create paid links to Walmart.com.
   eg. In the url : http://www.walmart.com/ip/Garanimals-Newborn-Boys-21-Piece-Layette-Set/22955038
   22955038 is the item id.
 
+  IMPORTANT NOTE : Please provide your Linkshare ID in the Walmart Affiliate Link admin page (accessible through the settings page) before using the plugin. The plugin does not create any links if Linkshare ID is not provided in the admin page.
+
+
   Please test all your links to ensure they redirect to Walmart.com after publishing.
 
 == Installation ==
