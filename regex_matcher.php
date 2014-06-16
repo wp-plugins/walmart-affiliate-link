@@ -3,11 +3,12 @@
 Modify the content and insert the links.
 */
 function generate_links( $content ) { 
+  global $wmt_options;
   if (!$wmt_options['encrypted']) {
     // Dont insert invalid links. User can notice that links aren't inserted and try to fix the problem.
     return $content;
   }
-  global $wmt_options;
+
   global $link_created;
 
   // g isn't required in the regex options because preg_replace already
