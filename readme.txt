@@ -1,4 +1,4 @@
-=== Walmart Affiliate Link ===
+=== Walmart Affiliate Link For Wordpress ===
 Contributors: tofa.wl@gmail.com
 Tags: walmart, affiliate, marketing, tool, link
 Requires at least: 3.8.1
