@@ -3,7 +3,7 @@ Contributors: tofa.wl@gmail.com
 Tags: walmart, affiliate, marketing, tool, link
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: trunk
+Stable tag: 1.0
 License: GPLv2 or later
 
 Walmart Affiliate Link lets you easily create paid links to Walmart.com.
