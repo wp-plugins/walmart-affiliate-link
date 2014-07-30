@@ -1,6 +1,7 @@
 <?php
   /*
    * Plugin Name: Walmart Affiliate Link Generator
+   * Version: 1.0.1
    */
 
 /*
