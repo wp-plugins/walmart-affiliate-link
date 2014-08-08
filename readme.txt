@@ -3,7 +3,7 @@ Contributors: tofa.wl@gmail.com
 Tags: walmart, affiliate, marketing, tool, link
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 
 Walmart Affiliate Link lets you easily create paid links to Walmart.com.
@@ -32,15 +32,40 @@ Walmart Affiliate Link lets you easily create paid links to Walmart.com.
 
   Pattern 3:
 
-  [walmart banner item-id]
+  [walmart rectangle item-id]
 
-  eg. [walmart banner 123123123]	 Lets you create a banner for a specific product.
+  eg. [walmart rectangle 123123123]	 Lets you create a rectangular banner for a specific product.
   You can obtain the walmart item id by browsing the site. Walmart.com item pages urls adhere to the following format.
 
   http://www.walmart.com/ip/title-of-the-item/item-id
 
   eg. In the url : http://www.walmart.com/ip/Garanimals-Newborn-Boys-21-Piece-Layette-Set/22955038
   22955038 is the item id.
+  
+  Pattern 4:
+  
+  [walmart leaderboard item1-id item2-id]
+  
+  eg. [walmart leaderboard 123123123 234234234] Lets you create a leaderboard banner for two products.
+  
+  NOTE : Please use product ids of exactly two items seperated by spaces to use this pattern.
+  
+  Pattern 5:
+  
+  [walmart skyscraper item1-id item2-id item3-id]
+  
+  eg. [walmart 123123123 234234234 345345345] Lets you create a skyscraper banner for three products.
+  
+  NOTE : Please use product ids of exactly three items seperated by spaces to use this pattern.
+  
+  Pattern 6:
+  
+  [walmart carousel item1-id item2-id item3-id item4-id item5-id] Lets you create a carousel banner for atmost five products.
+  eg. [walmart carousel 123123123 234234234 345345345 456456456]
+  
+  NOTE : Please use product ids of atmost five items seperated by spaces to use this pattern.
+  
+
 
   IMPORTANT NOTE : Please provide your Linkshare ID in the Walmart Affiliate Link admin page (accessible through the settings page) before using the plugin. The plugin does not create any links if Linkshare ID is not provided in the admin page.
 

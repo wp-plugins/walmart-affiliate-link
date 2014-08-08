@@ -18,8 +18,6 @@ class test extends PHPUnit_Framework_TestCase {
  		$a = "[walmart search                 chocos sweet]";
     	$content = "<p>This is ".utf8_encode($a)." SPARTA.</p>";
 		$newcontent = generate_links($content);
-		echo $content;
-		echo $newcontent;
 		$this->assertTrue($content != $newcontent);
     }
 
@@ -94,41 +92,192 @@ class test extends PHPUnit_Framework_TestCase {
 		$newcontent = generate_links($content);
 		$this->assertTrue($content != $newcontent);
     }
-
+    
     public function test_generate_links_banner_pass() {
-    	$content = "This is the first test. [walmart banner 123123123]. This should link to search page with tv's.";
-		$newcontent = generate_links($content);
-		$this->assertTrue($content != $newcontent);
+      $content = "This is the first test. [walmart banner 123123123]. This should link to search page with tv's.";
+      $newcontent = generate_links($content);
+      $this->assertTrue($content != $newcontent);
     }
-
-	public function test_generate_links_banner_pass_unicode() {
-    	$content = "This is the first test. [walmart                  banner                  123123123]. This should link to search page with tv's.";
-		$newcontent = generate_links($content);
-		$this->assertTrue($content != $newcontent);
+    
+    public function test_generate_links_banner_pass_unicode() {
+      $content = "This is the first test. [walmart                  banner                  123123123]. This should link to search page with tv's.";
+      $newcontent = generate_links($content);
+      $this->assertTrue($content != $newcontent);
     }
-
+    
     public function test_generate_links_banner_pass_extra_spaces() {
-    	$content = "This is the first test. [walmart   banner   			  123123123]. This should link to search page with tv's.";
+      $content = "This is the first test. [walmart   banner   			  123123123]. This should link to search page with tv's.";
+      $newcontent = generate_links($content);
+      $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_banner_pass_multiple_in_string() {
+      $a = "[walmart banner 123123123]";
+      $b = "[walmart banner 312233123]";
+      $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+      $newcontent = generate_links($content);
+      $this->assertTrue(!strpos($newcontent, $a));
+      $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
+    public function test_generate_links_banner_pass_multiple_in_string_same() {
+      $a = "[walmart banner 123123123]";
+      $b = "[walmart banner 123123123]";
+      $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+      $newcontent = generate_links($content);
+      $this->assertTrue(!strpos($newcontent, $a));
+      $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
+    public function test_generate_links_rectangle_pass() {
+    	$content = "This is the first test. [walmart rectangle 123123123]. This should link to search page with tv's.";
 		$newcontent = generate_links($content);
 		$this->assertTrue($content != $newcontent);
     }
 
-    public function test_generate_links_banner_pass_multiple_in_string() {    	
-    	$a = "[walmart banner 123123123]";
-    	$b = "[walmart banner 312233123]";
+	public function test_generate_links_rectangle_pass_unicode() {
+    	$content = "This is the first test. [walmart                  rectangle                  123123123]. This should link to search page with tv's.";
+		$newcontent = generate_links($content);
+		$this->assertTrue($content != $newcontent);
+    }
+
+    public function test_generate_links_rectangle_pass_extra_spaces() {
+    	$content = "This is the first test. [walmart   rectangle   			  123123123]. This should link to search page with tv's.";
+		$newcontent = generate_links($content);
+		$this->assertTrue($content != $newcontent);
+    }
+
+    public function test_generate_links_rectangle_pass_multiple_in_string() {    	
+    	$a = "[walmart rectangle 123123123]";
+    	$b = "[walmart rectangle 312233123]";
     	$content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
 		$newcontent = generate_links($content);		
 		$this->assertTrue(!strpos($newcontent, $a));
 		$this->assertTrue(!strpos($newcontent, $b));
     }
 
-    public function test_generate_links_banner_pass_multiple_in_string_same() {    	
-    	$a = "[walmart banner 123123123]";
-    	$b = "[walmart banner 123123123]";
+    public function test_generate_links_rectangle_pass_multiple_in_string_same() {    	
+    	$a = "[walmart rectangle 123123123]";
+    	$b = "[walmart rectangle 123123123]";
     	$content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
 		$newcontent = generate_links($content);		
 		$this->assertTrue(!strpos($newcontent, $a));
 		$this->assertTrue(!strpos($newcontent, $b));
     }
+    
+    public function test_generate_links_leaderboard_pass() {
+       $content = "This is the first test. [walmart leaderboard 123123123 35032711]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_leaderboard_pass_unicode() {
+       $content = "This is the first test. [walmart                  leaderboard                  123123123                  35032711]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_leaderboard_pass_extra_spaces() {
+       $content = "This is the first test. [walmart   leaderboard   			  123123123     35032711]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_leaderboard_pass_multiple_in_string() {
+       $a = "[walmart leaderboard 123123123 35032711]";
+       $b = "[walmart leaderboard 312233123 35032711]";
+       $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+       $newcontent = generate_links($content);
+       $this->assertTrue(!strpos($newcontent, $a));
+       $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
+    public function test_generate_links_leaderboard_pass_multiple_in_string_same() {
+       $a = "[walmart leaderboard 123123123 35032711]";
+       $b = "[walmart leaderboard 123123123 35032711]";
+       $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+       $newcontent = generate_links($content);
+       $this->assertTrue(!strpos($newcontent, $a));
+       $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
+    public function test_generate_links_skyscraper_pass() {
+       $content = "This is the first test. [walmart skyscraper 123123123 35032711 34083867]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_skyscraper_pass_unicode() {
+       $content = "This is the first test. [walmart                  skyscraper                  123123123                  35032711                  34083867]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_skyscraper_pass_extra_spaces() {
+       $content = "This is the first test. [walmart   skyscraper   			  123123123     35032711  34083867]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_skyscraper_pass_multiple_in_string() {
+       $a = "[walmart skyscraper 123123123 35032711 34083867]";
+       $b = "[walmart skyscraper 312233123 35032711 34083867]";
+       $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+       $newcontent = generate_links($content);
+       $this->assertTrue(!strpos($newcontent, $a));
+       $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
+    public function test_generate_links_skyscraper_pass_multiple_in_string_same() {
+       $a = "[walmart skyscraper 123123123 35032711 34083867]";
+       $b = "[walmart skyscraper 123123123 35032711 34083867]";
+       $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+       $newcontent = generate_links($content);
+       $this->assertTrue(!strpos($newcontent, $a));
+       $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
+    public function test_generate_links_carousel_pass_single_product() {
+       $content = "This is the first test. [walmart carousel 34083867]";
+       $newcontent = generate_links($content);
+       $this->assertTrue(!$content != $newcontent);
+    }
+    
+    public function test_generate_links_carousel_pass() {
+       $content = "This is the first test. [walmart carousel 123123123 35032711 34083867]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_carousel_pass_unicode() {
+       $content = "This is the first test. [walmart                  carousel                  123123123                  35032711                  34083867]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_carousel_pass_extra_spaces() {
+       $content = "This is the first test. [walmart   carousel   			  123123123     35032711  34083867]. This should link to search page with tv's.";
+       $newcontent = generate_links($content);
+       $this->assertTrue($content != $newcontent);
+    }
+    
+    public function test_generate_links_carousel_pass_multiple_in_string() {
+       $a = "[walmart carousel 123123123 35032711 34083867]";
+       $b = "[walmart carousel 312233123 35032711 34083867]";
+       $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+       $newcontent = generate_links($content);
+       $this->assertTrue(!strpos($newcontent, $a));
+       $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
+    public function test_generate_links_carousel_pass_multiple_in_string_same() {
+       $a = "[walmart carousel 123123123 35032711 34083867]";
+       $b = "[walmart carousel 123123123 35032711 34083867]";
+       $content = "This is the first test. ".$a." This should link to search page with tv's.".$b;
+       $newcontent = generate_links($content);
+       $this->assertTrue(!strpos($newcontent, $a));
+       $this->assertTrue(!strpos($newcontent, $b));
+    }
+    
 }
 ?>

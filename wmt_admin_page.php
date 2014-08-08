@@ -58,7 +58,7 @@ Congratulations! you are just one step away from using this plugin. This plugin 
     border-collapse:collapse;
     border-spacing:5px;
     border-radius:20px;
-    width:1000px;
+    width:1100px;
     height:120px;
     padding:10px;
   }
@@ -93,11 +93,11 @@ Congratulations! you are just one step away from using this plugin. This plugin 
     <tr>
       <td>
         Pattern : <br><br>
-        [walmart&lt;space&gt;banner&lt;space&gt;&lt;item id&gt;]<br><br>
-        eg. [walmart banner 123123123]
+        [walmart&lt;space&gt;rectangle&lt;space&gt;&lt;item id&gt;]<br><br>
+        eg. [walmart rectangle  123123123]
       </td>
       <td>
-        Lets you create a banner for a specific product.<br>
+        Lets you create a rectangular banner for a specific product.<br>
         You can obtain the walmart item id by browsing the site. Walmart.com item pages urls adhere to the following format.<br><br>
         <i>http://www.walmart.com/ip/&lt;title of the item&gt;/&lt;item id&gt;<br><br></i>
         eg. In the url : <i>http://www.walmart.com/ip/Garanimals-Newborn-Boys-21-Piece-Layette-Set/22955038</i><br>
@@ -105,6 +105,37 @@ Congratulations! you are just one step away from using this plugin. This plugin 
 
       </td>      
     </tr>    
+   <tr>
+      <td>
+        Pattern : <br><br>
+        [walmart&lt;space&gt;leaderboard&lt;space&gt;&lt;item1 id&gt;&lt;space&gt;&lt;item2 id&gt;]<br><br>
+        eg. [walmart leaderboard 123123123  234234234]
+      </td>
+      <td>
+        Lets you create a leaderboard banner for exactly two products.<br>
+      </td>      
+   </tr>   
+  <tr>
+      <td>
+        Pattern : <br><br>
+        [walmart&lt;space&gt;skyscraper&lt;space&gt;&lt;item1 id&gt;&lt;space&gt;&lt;item2 id&gt;&lt;space&gt;&lt;item3 id&gt;]<br><br>
+        eg. [walmart skyscraper 123123123  234234234 345345345]
+      </td>
+      <td>
+        Lets you create a skyscraper banner for exactly three products.<br>
+      </td>      
+   </tr>
+  <tr>
+      <td>
+        Pattern : <br><br>
+        [walmart&lt;space&gt;carousel&lt;space&gt;&lt;item1 id&gt;&lt;space&gt;&lt;item2 id&gt;&lt;space&gt;&lt;item3 id&gt;&lt;space&gt;&lt;item4 id&gt;&lt;space&gt;&lt;item5 id&gt;]<br><br>
+        eg. [walmart carousel 123123123  234234234 345345345 456456456]
+      </td>
+      <td>
+        Lets you create a carousel banner for atmost five products.<br>
+      </td>      
+   </tr>
+   
   </table>
  <div style="margin-top:10px;">
     Please test all your links to ensure they redirect to Walmart.com after publishing.
