@@ -56,17 +56,17 @@ function generate_links($content) {
 	
 	$newcontent = preg_replace_callback ( $pattern_rectangle, function ($matches) {
 		global $wmt_options;
-		return '<iframe target="_blank" height="250" width="300" src="http://affil.walmart.com/ad?wtype=rc&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&itemIDs=' . $matches [1] . '"></iframe>';
+		return '<iframe target="_blank" height="250" width="300" src="http://affil.walmart.com/ad?wtype=rc&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&affs=w&itemIDs=' . $matches [1] . '"></iframe>';
 	}, $newcontent );
 	
 	$newcontent = preg_replace_callback ( $pattern_leaderboard, function ($matches) {
 		global $wmt_options;
-		return '<iframe target="_blank" height="90" width="728" src="http://affil.walmart.com/ad?wtype=ld&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&itemIDs=' . $matches [1] . ',' . $matches [2] . '"></iframe>';
+		return '<iframe target="_blank" height="90" width="728" src="http://affil.walmart.com/ad?wtype=ld&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&affs=w&itemIDs=' . $matches [1] . ',' . $matches [2] . '"></iframe>';
 	}, $newcontent );
 	
 	$newcontent = preg_replace_callback ( $pattern_skyscraper, function ($matches) {
 		global $wmt_options;
-		return '<iframe target="_blank" height="600" width="160" src="http://affil.walmart.com/ad?wtype=ss&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&itemIDs=' . $matches [1] . ',' . $matches [2] . ',' . $matches [3] . '"></iframe>';
+		return '<iframe target="_blank" height="600" width="160" src="http://affil.walmart.com/ad?wtype=ss&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&affs=w&itemIDs=' . $matches [1] . ',' . $matches [2] . ',' . $matches [3] . '"></iframe>';
 	}, $newcontent );
 	
 	$newcontent = preg_replace_callback ( $pattern_carousel, function ($matches) {
@@ -81,7 +81,7 @@ function generate_links($content) {
 		
 		$product_ids_comma_sep = trim($product_ids_comma_sep,',');
 		
-		return '<iframe target="_blank" height="250" width="300" src="http://affil.walmart.com/ad?wtype=carousel&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&itemIDs='.$product_ids_comma_sep.'"></iframe>';
+		return '<iframe target="_blank" height="250" width="300" src="http://affil.walmart.com/ad?wtype=carousel&lsnTrack=http%3A%2F%2Flinksynergy.walmart.com%2Ffs-bin%2Fclick%3Fid%3D' . $wmt_options ['encrypted'] . '%26offerid%3D223073.7503%26type%3D13%26subid%3D0%26tmpid%3D1081&exp=ID&affs=w&itemIDs='.$product_ids_comma_sep.'"></iframe>';
 	}, $newcontent );
 	
 	return $newcontent;
